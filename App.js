@@ -98,6 +98,7 @@ const styles=StyleSheet.create({
     //justifyContent:"flex-start",
     //alignItems:"flex-start",
     flexWrap: "nowrap",
+    alignContent: "center" ,
     height:200,
     marginTop:64,
     borderWidth:6,
