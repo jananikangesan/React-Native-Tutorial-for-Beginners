@@ -93,10 +93,12 @@ export default function App(){
 
 const styles=StyleSheet.create({
   container:{
-    flex:1,
+    //flex:1,
     //flexDirection:"row-reverse",
     //justifyContent:"flex-start",
-    alignItems:"flex-start",
+    //alignItems:"flex-start",
+    flexWrap: "nowrap",
+    height:200,
     marginTop:64,
     borderWidth:6,
     borderColor:"red",
