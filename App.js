@@ -78,11 +78,11 @@ export default function App(){
     {/* <Styling/> */}
 
     
-    <Box style={{backgroundColor:"#8e9b00"}} children="box1"/>
-    <Box style={{backgroundColor:"#3d53c5ff"}}>box2</Box>
-    <Box style={{backgroundColor:"#d8491eff"}}>box3</Box>
+    <Box style={{backgroundColor:"#8e9b00"}} children="box1 shrink"/>
+    <Box style={{backgroundColor:"#3d53c5ff", flexShrink:1 }}>box2 shrink</Box>
+    {/* <Box style={{backgroundColor:"#d8491eff"}}>box3</Box>
     <Box style={{backgroundColor:"#9b0000ff", flexBasis:140}}>box4</Box>
-    <Box style={{backgroundColor:"#de37c7ff"}}>box5</Box> 
+    <Box style={{backgroundColor:"#de37c7ff"}}>box5</Box>  */}
 
 
   </View>);
@@ -94,10 +94,10 @@ export default function App(){
 const styles=StyleSheet.create({
   container:{
     flex:1,
-    //flexDirection:"row-reverse",
+    flexDirection:"row",
     //justifyContent:"flex-start",
-    //alignItems:"flex-start",
-  
+    alignItems:"flex-start",
+    width:300,
     //flexWrap: "wrap",
     //rowGap:20,
     //columnGap: 30,
