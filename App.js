@@ -78,10 +78,10 @@ export default function App(){
     {/* <Styling/> */}
 
     
-    <Box style={{backgroundColor:"#8e9b00"}} children="box1 shrink"/>
+    <Box style={{backgroundColor:"#8e9b00", top:75, left:75}} children="box1 shrink"/>
     <Box style={{backgroundColor:"#3d53c5ff"}}>box2 shrink</Box>
     <Box style={{backgroundColor:"#d8491eff"}}>box3</Box>
-    <Box style={{backgroundColor:"#9b0000ff"}}>box4</Box>
+    <Box style={{backgroundColor:"#9b0000ff", top:75, left:75}}>box4</Box>
     <Box style={{backgroundColor:"#de37c7ff"}}>box5</Box> 
 
 
