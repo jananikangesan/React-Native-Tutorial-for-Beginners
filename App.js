@@ -97,7 +97,12 @@ const styles=StyleSheet.create({
     //flexDirection:"row-reverse",
     //justifyContent:"flex-start",
     //alignItems:"flex-start",
-    flexWrap: "nowrap",
+  
+    flexWrap: "wrap",
+    //rowGap:20,
+    //columnGap: 30,
+
+    gap:10,
     alignContent: "center" ,
     height:200,
     marginTop:64,
