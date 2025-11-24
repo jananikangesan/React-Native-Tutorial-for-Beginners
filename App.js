@@ -81,8 +81,8 @@ export default function App(){
     <Box style={{backgroundColor:"#8e9b00"}} children="box1"/>
     <Box style={{backgroundColor:"#3d53c5ff"}}>box2</Box>
     <Box style={{backgroundColor:"#d8491eff"}}>box3</Box>
-    {/* <Box style={{backgroundColor:"#9b0000ff"}}>box4</Box>
-    <Box style={{backgroundColor:"#de37c7ff"}}>box5</Box> */}
+    <Box style={{backgroundColor:"#9b0000ff", flexBasis:140}}>box4</Box>
+    <Box style={{backgroundColor:"#de37c7ff"}}>box5</Box> 
 
 
   </View>);
@@ -93,18 +93,18 @@ export default function App(){
 
 const styles=StyleSheet.create({
   container:{
-    //flex:1,
+    flex:1,
     //flexDirection:"row-reverse",
     //justifyContent:"flex-start",
     //alignItems:"flex-start",
   
-    flexWrap: "wrap",
+    //flexWrap: "wrap",
     //rowGap:20,
     //columnGap: 30,
 
-    gap:10,
-    alignContent: "center" ,
-    height:200,
+    //gap:10,
+    //alignContent: "center" ,
+    //height:200,
     marginTop:64,
     borderWidth:6,
     borderColor:"red",
