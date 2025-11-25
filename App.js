@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import {View,Text, Image,ImageBackground, ScrollView, Button,Pressable,Modal, StatusBar, ActivityIndicator, Alert, StyleSheet} from  'react-native'
+import {View,Text, Image,ImageBackground, ScrollView, Button,Pressable,Modal, StatusBar, ActivityIndicator, Alert, StyleSheet,Dimensions} from  'react-native'
 import Greet from './components/Greet';
 import Styling from './components/Styling';
 import Box from './components/Box';
@@ -78,18 +78,26 @@ export default function App(){
     {/* <Styling/> */}
 
     
-    <Box style={{backgroundColor:"#8e9b00", top:75, left:75}} children="box1 shrink"/>
+    {/* <Box style={{backgroundColor:"#8e9b00", top:75, left:75}} children="box1 shrink"/>
     <Box style={{backgroundColor:"#3d53c5ff"}}>box2 shrink</Box>
     <Box style={{backgroundColor:"#d8491eff"}}>box3</Box>
     <Box style={{backgroundColor:"#9b0000ff", top:75, left:75}}>box4</Box>
-    <Box style={{backgroundColor:"#de37c7ff"}}>box5</Box> 
+    <Box style={{backgroundColor:"#de37c7ff"}}>box5</Box>  */}
 
+      <View style={styles.box}>
+        <Text style={styles.text}>Welcome!</Text>
+      </View>
 
   </View>);
 
 
 
 }
+const windowWidth =Dimensions.get("window").width
+
+const windowHeight =Dimensions.get("window").height
+
+console.log({windowWidth,windowHeight})
 
 const styles=StyleSheet.create({
   container:{
@@ -105,8 +113,22 @@ const styles=StyleSheet.create({
     //gap:10,
     //alignContent: "center" ,
     //height:200,
-    marginTop:64,
-    borderWidth:6,
-    borderColor:"red",
+    //marginTop:64,
+    //borderWidth:6,
+    //borderColor:"red",
+    backgroundColor:"plum",
+    alignItems:"center",
+    justifyContent:"center",
+
   },
+  box:{
+    width:windowWidth > 500 ? "70%" :"90%",
+    height:windowHeight >600 ? "60% " :"90%",
+    backgroundColor:"lightblue",
+    alignItems:"center",
+    justifyContent:"center"
+  },
+  text:{
+    fontSize: windowWidth >500 ? 50:24,
+  }
 })
