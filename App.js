@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {View,Text, Image,ImageBackground, ScrollView, Button,Pressable,Modal, StatusBar, ActivityIndicator, Alert, StyleSheet,Dimensions} from  'react-native'
 import Greet from './components/Greet';
 import Styling from './components/Styling';
@@ -11,6 +11,21 @@ const logoImg=require("./assets/adaptive-icon.png")
 export default function App(){
 
   //const [isModalVisible,setIsModalVisible]=useState(false);
+
+  const [dimentions,setDimentions]=useState({
+    window:Dimensions.get("window")
+  })
+
+  useEffect(()=>{
+    const subscription = Dimensions.addEventListener("change",({window})=>{
+      setDimentions({window});
+    });
+    return () =>subscription?.remove();
+  })
+
+  const {window}=dimentions;
+  const windowWidth =window.width;
+  const windowHeight = window.height;
 
   return(
   <View style={[styles.container]}>
@@ -85,7 +100,7 @@ export default function App(){
     <Box style={{backgroundColor:"#de37c7ff"}}>box5</Box>  */}
 
       <View style={styles.box}>
-        <Text style={styles.text}>Welcome!</Text>
+        <Text style={{fontSize:windowWidth > 500?50:24}}>Welcome!</Text>
       </View>
 
   </View>);
@@ -93,9 +108,8 @@ export default function App(){
 
 
 }
-const windowWidth =Dimensions.get("window").width
-
-const windowHeight =Dimensions.get("window").height
+//const windowWidth =Dimensions.get("window").width
+//const windowHeight =Dimensions.get("window").height
 
 console.log({windowWidth,windowHeight})
 
@@ -128,7 +142,7 @@ const styles=StyleSheet.create({
     alignItems:"center",
     justifyContent:"center"
   },
-  text:{
-    fontSize: windowWidth >500 ? 50:24,
-  }
+  // text:{
+  //   fontSize: windowWidth >500 ? 50:24,
+  // }
 })
