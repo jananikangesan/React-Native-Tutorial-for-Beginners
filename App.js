@@ -1,31 +1,34 @@
 import { useEffect, useState } from 'react';
-import {View,Text, Image,ImageBackground, ScrollView, Button,Pressable,Modal, StatusBar, ActivityIndicator, Alert, StyleSheet,Dimensions} from  'react-native'
+import {View,Text,useWindowDimensions ,Image,ImageBackground, ScrollView, Button,Pressable,Modal, StatusBar, ActivityIndicator, Alert, StyleSheet,Dimensions} from  'react-native'
 import Greet from './components/Greet';
 import Styling from './components/Styling';
 import Box from './components/Box';
 
 
-const logoImg=require("./assets/adaptive-icon.png")
+//const logoImg=require("./assets/adaptive-icon.png")
 
 
 export default function App(){
 
   //const [isModalVisible,setIsModalVisible]=useState(false);
 
-  const [dimentions,setDimentions]=useState({
-    window:Dimensions.get("window")
-  })
+  // const [dimentions,setDimentions]=useState({
+  //   window:Dimensions.get("window")
+  // })
 
-  useEffect(()=>{
-    const subscription = Dimensions.addEventListener("change",({window})=>{
-      setDimentions({window});
-    });
-    return () =>subscription?.remove();
-  })
+  // useEffect(()=>{
+  //   const subscription = Dimensions.addEventListener("change",({window})=>{
+  //     setDimentions({window});
+  //   });
+  //   return () =>subscription?.remove();
+  // })
 
-  const {window}=dimentions;
-  const windowWidth =window.width;
-  const windowHeight = window.height;
+  // const {window}=dimentions;
+  // const windowWidth =window.width;
+  // const windowHeight = window.height;
+
+  const windowWidth =useWindowDimensions().windowWidth
+  const windowHeight =useWindowDimensions().windowHeight
 
   return(
   <View style={[styles.container]}>
