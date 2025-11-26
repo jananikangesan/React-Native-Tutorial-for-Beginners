@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
-import {View,Text,useWindowDimensions ,Image,ImageBackground, ScrollView, Button,Pressable,Modal, StatusBar, ActivityIndicator, Alert, StyleSheet,Dimensions} from  'react-native'
+import {View,Text,SafeAreaView,useWindowDimensions ,Image,ImageBackground, ScrollView, Button,Pressable,Modal, StatusBar, ActivityIndicator, Alert, StyleSheet,Dimensions} from  'react-native'
 import Greet from './components/Greet';
 import Styling from './components/Styling';
 import Box from './components/Box';
+
 
 
 //const logoImg=require("./assets/adaptive-icon.png")
@@ -27,8 +28,8 @@ export default function App(){
   // const windowWidth =window.width;
   // const windowHeight = window.height;
 
-  const windowWidth =useWindowDimensions().windowWidth
-  const windowHeight =useWindowDimensions().windowHeight
+  // const windowWidth =useWindowDimensions().windowWidth
+  // const windowHeight =useWindowDimensions().windowHeight
 
   return(
   <View style={[styles.container]}>
@@ -102,14 +103,17 @@ export default function App(){
     <Box style={{backgroundColor:"#9b0000ff", top:75, left:75}}>box4</Box>
     <Box style={{backgroundColor:"#de37c7ff"}}>box5</Box>  */}
 
-      <View style={[styles.box,
-        {
-          width:windowWidth > 500 ? "70%" :"90%",
-          height:windowHeight >600 ? "60% " :"90%",
-        },
-      ]}>
-        <Text style={{fontSize:windowWidth > 500?50:24}}>Welcome!</Text>
-      </View>
+<SafeAreaView style={styles.safeContainer}>
+  <View style={[styles.box,
+          // {
+          //   width:windowWidth > 500 ? "70%" :"90%",
+          //   height:windowHeight >600 ? "60% " :"90%",
+          // },
+        ]}>
+          <Text style={styles.text}>Welcome!</Text>
+        </View>
+</SafeAreaView>
+      
 
   </View>);
 
@@ -139,17 +143,24 @@ const styles=StyleSheet.create({
     //borderWidth:6,
     //borderColor:"red",
     backgroundColor:"plum",
-    alignItems:"center",
-    justifyContent:"center",
+    //alignItems:"center",
+    //justifyContent:"center",
 
   },
   box:{
     
-    backgroundColor:"lightblue",
-    alignItems:"center",
-    justifyContent:"center"
+    // backgroundColor:"lightblue",
+    // alignItems:"center",
+    // justifyContent:"center"
+    padding:20
   },
-  // text:{
-  //   fontSize: windowWidth >500 ? 50:24,
-  // }
+  text:{
+    fontSize: 24,
+    fontWeight :"bold",
+    textAlign:"center"
+  },
+  safeContainer:{
+    flex:1,
+    backgroundColor:"plum",
+  }
 })
