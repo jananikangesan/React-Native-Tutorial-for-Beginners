@@ -99,7 +99,12 @@ export default function App(){
     <Box style={{backgroundColor:"#9b0000ff", top:75, left:75}}>box4</Box>
     <Box style={{backgroundColor:"#de37c7ff"}}>box5</Box>  */}
 
-      <View style={styles.box}>
+      <View style={[styles.box,
+        {
+          width:windowWidth > 500 ? "70%" :"90%",
+          height:windowHeight >600 ? "60% " :"90%",
+        },
+      ]}>
         <Text style={{fontSize:windowWidth > 500?50:24}}>Welcome!</Text>
       </View>
 
@@ -111,7 +116,7 @@ export default function App(){
 //const windowWidth =Dimensions.get("window").width
 //const windowHeight =Dimensions.get("window").height
 
-console.log({windowWidth,windowHeight})
+//console.log({windowWidth,windowHeight})
 
 const styles=StyleSheet.create({
   container:{
@@ -136,8 +141,7 @@ const styles=StyleSheet.create({
 
   },
   box:{
-    width:windowWidth > 500 ? "70%" :"90%",
-    height:windowHeight >600 ? "60% " :"90%",
+    
     backgroundColor:"lightblue",
     alignItems:"center",
     justifyContent:"center"
