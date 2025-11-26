@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
-import {View,Text,SafeAreaView,useWindowDimensions ,Image,ImageBackground, ScrollView, Button,Pressable,Modal, StatusBar, ActivityIndicator, Alert, StyleSheet,Dimensions} from  'react-native'
+import {View,Text,Platform,SafeAreaView,useWindowDimensions ,Image,ImageBackground, ScrollView, Button,Pressable,Modal, StatusBar, ActivityIndicator, Alert, StyleSheet,Dimensions} from  'react-native'
 import Greet from './components/Greet';
 import Styling from './components/Styling';
 import Box from './components/Box';
+import CustomButton from './components/CustomButton/CustomButton';
+
 
 
 
@@ -111,6 +113,7 @@ export default function App(){
           // },
         ]}>
           <Text style={styles.text}>Welcome!</Text>
+          <CustomButton title="Press me" onPress={() => alert("Presed!")}/>
         </View>
 </SafeAreaView>
       
@@ -145,6 +148,7 @@ const styles=StyleSheet.create({
     backgroundColor:"plum",
     //alignItems:"center",
     //justifyContent:"center",
+    paddingTop:Platform.OS ==='android'?25:0
 
   },
   box:{
@@ -155,7 +159,19 @@ const styles=StyleSheet.create({
     padding:20
   },
   text:{
-    fontSize: 24,
+    
+    ...Platform.select({
+      ios:{
+        color:"purple",
+        fontSize: 24,
+        //fontStyle:"italic",
+      },
+      android:{
+         color:"blue",
+        fontSize: 30,
+        fontStyle:"italic",
+      }
+    }),
     fontWeight :"bold",
     textAlign:"center"
   },
